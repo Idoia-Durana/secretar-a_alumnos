@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sistema registro de estudiantes</title>
+<link rel="stylesheet" 
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+	crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+<style>
+
+html,body {
+  height: 100%;
+  background: #f2f2f2;
+font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+
+   font-weight: bold;
+
+}
+
+
+</style>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+<br>
+
+  <a class="navbar-brand" href="#">    Sistema de gestión de estudiantes </a>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav"> 
+      <li class="nav-item">
+      
+        <a class="nav-link" th:href="@{/students}">Ir al listado actualizado</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+
+	<div class = "container">
+	Idoia Durana Castro
+		<div class = "row">
+		
+			<div class = "card border-primary mb-3 col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+			<br>
+			
+		<img th:src="@{/imagenes/imagen.jpg}">
+
+				<br>
+		<br>
+			<h1 class = "text-center"><strong>Secretaría</strong></h1>
+			<br>
+				
+				<h3 class = "text-center">Matriculación interna de la asignatura de programación</h3>
+				
+				<div class ="card-body" >
+					<form th:action="@{/students}" th:object = "${student}" method = "post">
+						<div class = "form-group">
+						
+							<label>Nombre/s</label>
+							<input
+							type="text"
+							name="nombre"
+							th:field="*{nombre}"
+							class="form-control"
+							placeholder = "Introduzca el nombre del estudiante"
+							/>
+						
+						</div>
+						
+						<div class = "form-group">
+							<label>Apellido/s</label>
+							<input
+							type="text"
+							name="apellidos"
+							th:field="*{apellidos}"
+							class="form-control"
+							placeholder = "Introduzca los apellidos del estudiante"
+							/>
+						
+						</div>
+						<div class = "form-group">
+							<label>Email </label>
+							<input
+							type="text"
+							name="email"
+							th:field="*{email}"
+							class="form-control"
+							placeholder = "Introduce el email del estudiante"
+							/>
+							<br>
+						<div class = "form-group">
+							<label>Teléfono de contacto </label>
+							<input
+							type="text"
+							name="telContacto"
+							th:field="*{telcontacto}"
+							class="form-control"
+							placeholder = "Introduzca teléfono de contacto del estudiante"
+							/>
+						<br>
+						</div>
+
+						</div>
+						<div class = "form-group">
+							<label>Fecha de nacimiento </label>
+							<input
+							type="text"
+							name="fechaNacimiento"
+							th:field="*{fechaNacimiento}"
+							class="form-control"
+							placeholder = "Introduzca la fecha de nacimiento del estudiante"
+							/>
+						<br>
+						</div>
+						
+						
+						
+					
+						
+						<div class = "text-center">
+						<button type="submit" class = "btn btn-primary">
+						 Añadir
+						</button>
+						</div>
+						
+					</form>
+				
+				</div>
+			</div>		
+		</div>
+	</div>
+	
+
+</body>
+</html>
